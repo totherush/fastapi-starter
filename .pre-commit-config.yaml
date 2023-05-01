@@ -1,0 +1,20 @@
+repos:
+  - repo: https://github.com/psf/black
+    rev: 22.3.0
+    hooks:
+      - id: black
+        language_version: python3.11
+  - repo: local
+    hooks:
+      # - id: pylint
+      #   name: pylint
+      #   entry: poetry run pylint app/
+      #   language: system
+      #   always_run: true
+      #   pass_filenames: false
+      - id: update api docs
+        name: update openapi.json
+        entry: python generate_open_api_docs.py
+        language: system
+        always_run: true
+        pass_filenames: false
