@@ -4,13 +4,13 @@ from pydantic import BaseModel
 
 
 class CreateBlogPostRequestModel(BaseModel):
-    """Get foo request model"""
+    """Create blogpost request model"""
 
     title: str
     content: Optional[str]
 
 
 class GetBlogPostRequestModel(BaseModel):
-    """Get foo request model"""
+    """Get blogpost request model"""
 
     id: str

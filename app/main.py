@@ -19,9 +19,9 @@ app = FastAPI(docs_url="/docs" if settings.ENVIRONMENT == "staging" else None)
 
 @app.on_event("startup")
 async def startup_db_client():
-    app.mongodb_client = AsyncIOMotorClient(settings.DB_URL)
+    app.mongodb_client = AsyncIOMotorClient(settings.DB_URI)
     # use 'blogposts' collection
-    app.mongodb = app.mongodb_client["exampledb"]
+    app.mongodb = app.mongodb_client[settings.DB_NAME]
 
 
 app.include_router(blogposts.router)

@@ -1,0 +1,27 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+install = "*"
+fastapi = "*"
+uvicorn = {extras = ["standard"], version = "*"}
+pydantic = "*"
+motor = "*"
+httpx = "*"
+python-dateutil = "*"
+slack-sdk = "*"
+aiohttp = "*"
+
+[dev-packages]
+pylint = "*"
+pre-commit = "*"
+black = "*"
+pytest = "*"
+mongomock = "*"
+pytest-asyncio = "*"
+mongomock-motor = "*"
+
+[requires]
+python_version = "3.11"

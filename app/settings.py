@@ -8,7 +8,7 @@ class EnvironmentSettings(BaseSettings):
 
 
 class CommonSettings(BaseSettings):
-    APP_NAME: str = "payment service"
+    APP_NAME: str = "blogpost api"
     DEBUG_MODE: bool = bool(os.getenv("DEBUG"))
 
 
@@ -18,7 +18,8 @@ class ServerSettings(BaseSettings):
 
 
 class DatabaseSettings(BaseSettings):
-    DB_URL: str = os.getenv("MONGODB_URL", "")
+    DB_NAME: str = os.getenv("MONGODB_NAME", "")
+    DB_URI: str = os.getenv("MONGODB_URI", "")
 
 
 class SlackSettings(BaseSettings):
