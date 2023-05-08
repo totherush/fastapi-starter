@@ -31,8 +31,7 @@ async def test_create_blogpost(title, content):
     """These tests will:
     - Create a blogpost by using the POST /v1/blogposts endpoint
     - Verifies that the record is in the mocked db
-    - Deletes the created blogpost entry again
-    - Des
+    - Make a dummy httpx call to an external system
     """
     # Mock the db
     app.mongodb = AsyncMongoMockClient()[settings.DB_NAME]
